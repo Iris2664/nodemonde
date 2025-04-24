@@ -31,5 +31,26 @@
 </template>
 
 <style scoped>
+  form {
+    padding: 2em;
+    display: flex;
+  }
 
+  input {
+    width: 200px;
+    height: 1.5em;
+    padding: 1em;
+    border-radius: 1rem;
+    border: 1px solid #d8d8d8;
+    margin-right: 1em;
+  }
+
+  input:hover {
+    border: 2px solid #334;
+  }
+
+  form button {
+    margin-left: 1em;
+    padding: 1em;
+  }
 </style>
