@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { ref } from 'vue';
+  import Card from "./components/Card.vue";
 
   const countries = ref();
   async function fetchCountries() {
@@ -12,11 +13,14 @@
 <template>
   <h1>Country Info</h1>
   <button @click="fetchCountries">Fetch</button>
-  <article v-for="country in countries">
-    <div>{{ country.name.common }}</div>
-    <div>{{ country.flags.png }}</div>
-    <div>{{ country.tld }}</div>
-  </article>
+  
+  <Card
+    v-for="country in countries"
+    :key="country.name.common"
+    :name="country.name.common"
+    :image="country.flags.png"
+    :tldList="country.tld"
+  />
 </template>
 
 <style scoped>
